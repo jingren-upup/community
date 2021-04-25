@@ -1,6 +1,7 @@
 package com.nowcoder.community.controller;
 
 
+import com.nowcoder.community.annotation.LoginRequired;
 import com.nowcoder.community.entity.User;
 import com.nowcoder.community.service.UserService;
 import com.nowcoder.community.util.CommunityUtil;
@@ -46,12 +47,13 @@ public class UserController {
     @Autowired
     private HostHolder hostHolder;
 
-
+    @LoginRequired
     @RequestMapping(path = "/setting",method = RequestMethod.GET)
     public String getSettingPage(){
         return "/site/setting";
     }
 
+    @LoginRequired
     @RequestMapping(path = "/upload",method = RequestMethod.POST)
     public String uploadHeader(MultipartFile headerImage, Model model){
         if (headerImage == null){
@@ -72,7 +74,6 @@ public class UserController {
         try{
             headerImage.transferTo(dest);
         }catch (IOException e){
-
            logger.error("上传文件文件失败：" + e.getMessage());
            throw new RuntimeException("上传文件失败，服务器发生异常！",e);
         }
@@ -85,6 +86,7 @@ public class UserController {
 
         return "redirect:/index";
     }
+
     @RequestMapping(path = "/header/(fileName)",method = RequestMethod.GET)
     public void getHeader(@PathVariable("fileName") String fileName, HttpServletResponse response){
         // 服务器存放路径
