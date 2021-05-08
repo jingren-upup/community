@@ -1,5 +1,6 @@
-package com.nowcoder.community.dao;
+package com.nowcoder.community.dao.impl;
 
+import com.nowcoder.community.dao.AlphaDao;
 import org.springframework.stereotype.Repository;
 
 @Repository("alphaHibernate")
