@@ -21,14 +21,14 @@ public class CommentController {
     @Autowired
     private HostHolder hostHolder;
 
-    @RequestMapping(path = "/add{discussPostId}",method = RequestMethod.POST)
-    public String addComment(@PathVariable("discussPostId") int discussPostId, Comment comment){
-            comment.setUserId(hostHolder.getUser().getId());
-            comment.setStatus(0);
-            comment.setCreateTime(new Date());
-            commentService.addComment(comment);
-            return "redirect:/discuss/detail/" + discussPostId;
-    }
+    @RequestMapping(path = "/add/{discussPostId}", method = RequestMethod.POST)
+    public String addComment(@PathVariable("discussPostId") int discussPostId, Comment comment) {
+        comment.setUserId(hostHolder.getUser().getId());
+        comment.setStatus(0);
+        comment.setCreateTime(new Date());
+        commentService.addComment(comment);
 
+        return "redirect:/discuss/detail/" + discussPostId;
+    }
 
 }

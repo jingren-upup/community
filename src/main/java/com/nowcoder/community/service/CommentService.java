@@ -42,7 +42,7 @@ public class CommentService implements CommunityConstant {
         // 添加评论
         comment.setContent(HtmlUtils.htmlEscape(comment.getContent()));
         comment.setContent(sensitiveFilter.filter(comment.getContent()));
-        int rows = commentMapper. insertComment(comment);
+        int rows = commentMapper.insertComment(comment);
 
         // 更新帖子评论数量
         if (comment.getEntityType() == ENTITY_TYPE_POST) {
