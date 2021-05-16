@@ -2,9 +2,11 @@ package com.nowcoder.community;
 
 import com.nowcoder.community.dao.DiscussPostMapper;
 import com.nowcoder.community.dao.LoginTicketMapper;
+import com.nowcoder.community.dao.MessageMapper;
 import com.nowcoder.community.dao.UserMapper;
 import com.nowcoder.community.entity.DiscussPost;
 import com.nowcoder.community.entity.LoginTicket;
+import com.nowcoder.community.entity.Message;
 import com.nowcoder.community.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -29,6 +32,9 @@ public class MapperTests {
 
     @Autowired
     private LoginTicketMapper loginTicketMapper;
+
+    @Autowired
+    private MessageMapper messageMapper;
 
     @Test
     public void testSelectUser() {
@@ -101,4 +107,12 @@ public class MapperTests {
         System.out.println(loginTicket);
     }
 
+    @Test
+    public void testSelectLetters(){
+        //List<Message> list = new ArrayList<>();
+        List<Message> list =  messageMapper.selectConversations(111,0,20);
+        for (Message message: list){
+            System.out.println(message);
+        }
+    }
 }
