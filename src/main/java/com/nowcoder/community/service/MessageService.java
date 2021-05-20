@@ -13,7 +13,7 @@ public class MessageService {
     @Autowired
     private MessageMapper messageMapper;
 
-    public List<Message> findConversation(int userId,int offset,int limit){
+    public List<Message> findConversations(int userId,int offset,int limit){
         return messageMapper.selectConversations(userId,offset,limit);
     }
     public int findConversationCount(int userId){
