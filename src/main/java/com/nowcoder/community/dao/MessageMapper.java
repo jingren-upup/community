@@ -12,7 +12,7 @@ public interface MessageMapper {
     List<Message> selectConversations(int userId,int offset,int limit);
 
     //查询当前用户的会话数量
-    int selectConversation(int userId);
+    int selectConversationCount(int userId);
 
     //查询某个会话所包含的私信列表
     List<Message> selectLetters(String conversationId,int offset,int limit);
@@ -21,7 +21,7 @@ public interface MessageMapper {
     int selectLetterCount(String conversationId);
 
     //查询未读私信的数量
-    int selectLetterUnreadCount(int userId);
+    int selectLetterUnreadCount(int userId,String conversationId);
 
 
 }

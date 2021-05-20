@@ -112,6 +112,5 @@
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.jhlabs:filters:2.0.235-1" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.76" level="project" />
-    <orderEntry type="library" name="Maven: com.sun.xml.bind:jaxb-core:2.3.0" level="project" />
   </component>
 </module>

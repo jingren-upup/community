@@ -35,7 +35,7 @@ public class Message {
         this.toId = toId;
     }
 
-    public String getConversation() {
+    public String getConversationId() {
         return conversation;
     }
 
