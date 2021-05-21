@@ -3,10 +3,11 @@ package com.nowcoder.community.entity;
 import java.util.Date;
 
 public class Message {
+
     private int id;
     private int fromId;
     private int toId;
-    private String  conversation;
+    private String conversationId;
     private String content;
     private int status;
     private Date createTime;
@@ -36,11 +37,11 @@ public class Message {
     }
 
     public String getConversationId() {
-        return conversation;
+        return conversationId;
     }
 
-    public void setConversation(String conversation) {
-        this.conversation = conversation;
+    public void setConversationId(String conversationId) {
+        this.conversationId = conversationId;
     }
 
     public String getContent() {
@@ -73,7 +74,7 @@ public class Message {
                 "id=" + id +
                 ", fromId=" + fromId +
                 ", toId=" + toId +
-                ", conversation='" + conversation + '\'' +
+                ", conversationId='" + conversationId + '\'' +
                 ", content='" + content + '\'' +
                 ", status=" + status +
                 ", createTime=" + createTime +
