@@ -83,7 +83,11 @@
 					<div class="text-muted mt-3">
 						发布于 <b th:text="${#dates.format(post.createTime,'yyyy-MM-dd HH:mm:ss')}">2019-04-15 15:32:18</b>
 						<ul class="d-inline float-right">
-							<li class="d-inline ml-2"><a href="#" class="text-primary">赞 11</a></li>
+							<li class="d-inline ml-2">
+								<a href="javascript:;" th:onclick="|like(this,1,${post.id});|" class="text-primary">
+									<b>赞</b>  <i>11</i>
+								</a>
+							</li>
 							<li class="d-inline ml-2">|</li>
 							<li class="d-inline ml-2"><a href="#replyform" class="text-primary">回帖 <i th:text="${post.commentCount}">7</i></a></li>
 						</ul>
@@ -130,7 +134,13 @@
 						<div class="mt-4 text-muted font-size-12">
 							<span>发布于 <b th:text="${#dates.format(cvo.comment.createTime,'yyyy-MM-dd HH:mm:ss')}">2019-04-15 15:32:18</b></span>
 							<ul class="d-inline float-right">
-								<li class="d-inline ml-2"><a href="#" class="text-primary">赞(1)</a></li>
+								<li class="d-inline ml-2">
+									<a href="javascript:;" th:onclick="|like(this,2,cvo.comment.id);|" class="text-primary">
+										<b>赞</b>
+										(<i>1</i>)
+
+									</a>
+								</li>
 								<li class="d-inline ml-2">|</li>
 								<li class="d-inline ml-2"><a href="#" class="text-primary">回复(<i th:text="${cvo.replyCount}">2</i>)</a></li>
 							</ul>
